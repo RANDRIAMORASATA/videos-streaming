@@ -7,7 +7,6 @@ import { convertBlobToUrl } from '../../Helpers/fileHelper';
 import ViewVideoModal from '../ViewVideoModal/ViewVideoModal';
 import DeleteModalConfirm from '../DeleteModalConfirm/DeleteModalConfirm';
 import Upload from '../Upload/Upload';
-import { useLocation } from 'react-router-dom';
 import SearchBox from '../SearchBox/SearchBox';
 
 interface ContainerProps { }

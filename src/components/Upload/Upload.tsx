@@ -1,4 +1,3 @@
-
 import React, { FC, useEffect, useState } from 'react';
 import './Upload.css';
 import { Button, Modal } from 'react-bootstrap';

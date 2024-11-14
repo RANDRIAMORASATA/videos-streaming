@@ -9,9 +9,6 @@ interface LoadingProps {
 
 
 const Loading: FC<LoadingProps> = () => {
-
-
-
   useEffect(() => {
     window.scrollTo(0, 0)
     const runLocalData = async () => {

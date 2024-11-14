@@ -4,8 +4,6 @@ import './Notification.css';
 import { NotificationModel } from '../../models/NotificationModel';
 import { getNotifications } from '../../redux/selectors/selectors';
 import { REMOVE } from '../../redux/reducers/types/actions';
-
-
 interface NotificationProps { }
 
 const Notification: FC<NotificationProps> = () => {
@@ -20,7 +18,6 @@ const Notification: FC<NotificationProps> = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     const runLocalData = async () => {
-      // Add your async logic here
       notifications.map((notification: NotificationModel) => {
         setTimeout(() => {
           dispatch({

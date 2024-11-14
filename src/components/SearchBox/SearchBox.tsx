@@ -50,9 +50,9 @@ const SearchBox: FC<SearchBoxProps> = ({ handleChange }) => {
   };
 
   useEffect(() => {
-    window.scrollTo(0, 0); // Scroll to top on search query change
-    fetchData(); // Fetch data whenever the search query changes
-  }, [location.search]); // Dependency on location.search ensures this runs when the search query changes
+    window.scrollTo(0, 0);
+    fetchData();
+  }, [location.search]);
 
   return (
     <div className="SearchBox">

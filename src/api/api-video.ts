@@ -1,8 +1,7 @@
 import { slugify } from '../Helpers/stringHelper';
 import { Video } from '../models/Video';
-import { db } from './database';
 
-
+//function qui ajoute un video
 export const addVideo = async (video: Video) => {
   try {
     const response = await fetch('http://localhost:8080/api/videos', {
@@ -41,8 +40,7 @@ export const addVideo = async (video: Video) => {
   }
 };
 
-
-
+//function qui met à jour  un video
 export const updateVideo = async (video: Video) => {
   try {
     const response = await fetch(`http://localhost:8080/api/videos/${video.id}`, {
@@ -81,7 +79,7 @@ export const updateVideo = async (video: Video) => {
   }
 };
 
-
+//function qui affiche un video
 export const getVideo = async (id: number) => {
   try {
     const response = await fetch(`http://localhost:8080/api/videos/${id}`, {
@@ -113,7 +111,7 @@ export const getVideo = async (id: number) => {
   }
 };
 
-
+//function qui affiche tous les video
 export const getAllVideo = async () => {
   try {
     const response = await fetch('http://localhost:8080/api/videos', {
@@ -148,10 +146,10 @@ export const getAllVideo = async () => {
   }
 };
 
-
-export const deleteVideo = async (_id: number) => {
+//function qui supprime un video
+export const deleteVideo = async (id: number) => {
   try {
-    const response = await fetch(`http://localhost:8080/api/videos/${_id}`, {
+    const response = await fetch(`http://localhost:8080/api/videos/${id}`, {
       method: 'DELETE',
       credentials: 'include',  // Inclure les cookies dans la requête
     });
