@@ -20,7 +20,7 @@ const Header: FC = () => {
       <nav className="navbar navbar-light bg-light justify-content-between shadow-lg">
         <ul className="flex navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item">
-            <Link to="/" className="navbar-brand">Ouitube</Link>
+            <Link to="/" className="navbar-brand">Vidéos en streaming</Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link active" aria-current="page" to="/">Home</Link>
@@ -35,8 +35,8 @@ const Header: FC = () => {
             type="search"
             placeholder="Search"
             aria-label="Search"
-            value={searchInput}  // Set the input's value to the state
-            onChange={(event) => setSearchInput((event.target as HTMLInputElement).value)}  // Type assertion
+            value={searchInput}
+            onChange={(event) => setSearchInput((event.target as HTMLInputElement).value)}
           />
           <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
             Search

@@ -1,4 +1,3 @@
-
 import React, { FC, useEffect } from 'react';
 import './VideoCard.css';
 import { Video } from '../../models/Video';

@@ -4,7 +4,7 @@ import { Video } from '../../models/Video';
 import { getAllVideo } from '../../api/api-video';
 import { convertBlobToUrl } from '../../Helpers/fileHelper';
 import PlaylistItem from '../PlaylistItem/PlaylistItem';
-import Loading from '../Loading/Loading'; // Assurez-vous d'avoir ce composant
+import Loading from '../Loading/Loading';
 
 interface PlaylistProps {
   videoId: number

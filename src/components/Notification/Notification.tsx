@@ -6,19 +6,12 @@ import { getNotifications } from '../../redux/selectors/selectors';
 import { REMOVE } from '../../redux/reducers/types/actions';
 
 
-interface NotificationProps {}
-
-/*const notifications: NotificationModel[] = [
-  {
-    message: 'Video added successfully',
-    status: 'success'
-  }
-];*/
+interface NotificationProps { }
 
 const Notification: FC<NotificationProps> = () => {
   const notifications: NotificationModel[] = useSelector(getNotifications)
   const dispatch = useDispatch()
-  const handleDelete = (notification : NotificationModel)=>{
+  const handleDelete = (notification: NotificationModel) => {
     dispatch({
       type: REMOVE,
       payload: notification
@@ -28,13 +21,13 @@ const Notification: FC<NotificationProps> = () => {
     window.scrollTo(0, 0);
     const runLocalData = async () => {
       // Add your async logic here
-      notifications.map((notification : NotificationModel)=>{
-        setTimeout(()=>{
+      notifications.map((notification: NotificationModel) => {
+        setTimeout(() => {
           dispatch({
             type: REMOVE,
             payload: notification
           })
-        },notification?.timeOut||1000)
+        }, notification?.timeOut || 1000)
       })
     };
     runLocalData();
@@ -45,16 +38,16 @@ const Notification: FC<NotificationProps> = () => {
       {notifications.map((notification, index) => (
         <div key={index} className={`alert alert-${notification.status}`} role="alert">
           {notification.message}
-          <button 
-            type='button' 
-            className='btn-close' 
-            data-bs-dismiss='alert' 
+          <button
+            type='button'
+            className='btn-close'
+            data-bs-dismiss='alert'
             aria-label="close"
-            onClick={()=>handleDelete(notification)}
-            
-            ></button>
+            onClick={() => handleDelete(notification)}
+
+          ></button>
         </div>
-       
+
       ))}
     </div>
   );

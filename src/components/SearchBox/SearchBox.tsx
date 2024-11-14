@@ -21,30 +21,24 @@ const SearchBox: FC<SearchBoxProps> = ({ handleChange }) => {
       const data: any = await getAllVideo();
       if (data.isSuccess && Array.isArray(data.result)) {
         const processedVideos = data.result.map((video: Video) => {
-          // Assurez-vous que `poster` et `link` sont bien des Blob ou des fichiers
           if (video.poster && video.poster instanceof Blob) {
             video.posterLink = convertBlobToUrl(video.poster);
           } else {
-            // Si ce n'est pas un Blob, on suppose qu'il s'agit d'une URL valide
             video.posterLink = video.poster;
           }
 
           if (video.link && video.link instanceof Blob) {
             video.videoLink = convertBlobToUrl(video.link);
           } else {
-            // Si ce n'est pas un Blob, on suppose qu'il s'agit d'une URL valide
             video.videoLink = video.link;
           }
 
           return video;
         });
 
-        // Filter the videos based on the search query
         const filteredVideos = processedVideos.filter((video: Video) =>
           video.title.toLowerCase().includes(searchQuery.toLowerCase())
         );
-
-        // Pass filtered videos to the parent component via handleChange
         handleChange(filteredVideos);
         setVideos(filteredVideos);
       } else {

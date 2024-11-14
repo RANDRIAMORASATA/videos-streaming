@@ -1,10 +1,9 @@
 import React, { FC, useEffect, useState } from 'react';
 import './VideoFormModal.css';
-import { db } from '../../api/database';
 import { Button, Modal } from 'react-bootstrap';
 import { Video } from '../../models/Video';
 import { convertFileToBlob, convertFileToLink } from '../../Helpers/fileHelper';
-import { addVideo, updateVideo } from '../../api/api-video'; // Assuming you have an updateVideo function in your api-video file
+import { addVideo, updateVideo } from '../../api/api-video'; 
 import Loading from '../Loading/Loading';
 import { slugify } from '../../Helpers/stringHelper';
 import { useDispatch } from 'react-redux';

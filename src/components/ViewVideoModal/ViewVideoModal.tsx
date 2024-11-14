@@ -8,7 +8,7 @@ import { convertBlobToUrl } from '../../Helpers/fileHelper';
 import { OuitubePlayer } from 'ouitube-player';
 
 interface ViewVideoModalProps {
-  videoId: number; // Ensure videoId is of type number
+  videoId: number;
   hideModal: () => void;
 }
 
@@ -32,7 +32,7 @@ const ViewVideoModal: FC<ViewVideoModalProps> = ({ videoId, hideModal }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     runLocalData();
-  }, [videoId]); // Depend on videoId to rerun when it changes
+  }, [videoId]);
 
   return (
     <div className="ViewVideoModal">
@@ -46,30 +46,30 @@ const ViewVideoModal: FC<ViewVideoModalProps> = ({ videoId, hideModal }) => {
             <Loading />
           ) : video ? (
             <table className="table table-bordered">
-              
+
               <tbody>
-              <tr>
-                <th>Titre</th>
-                <th>{video.title}</th>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <th>{video.description}</th>
-              </tr>
-              <tr>
-                <th>Category</th>
-                <th>{video.category}</th>
-              </tr>
-              <tr>
-                <th>Poster</th>
-                <th><img src={video.poster as string} alt={video.title}  className='img-fluid'/></th>
-              </tr>
-              <tr>
-                <th>Video</th>
-                <th><OuitubePlayer src={video.link as string}/></th>
-              </tr>
+                <tr>
+                  <th>Titre</th>
+                  <th>{video.title}</th>
+                </tr>
+                <tr>
+                  <th>Description</th>
+                  <th>{video.description}</th>
+                </tr>
+                <tr>
+                  <th>Category</th>
+                  <th>{video.category}</th>
+                </tr>
+                <tr>
+                  <th>Poster</th>
+                  <th><img src={video.poster as string} alt={video.title} className='img-fluid' /></th>
+                </tr>
+                <tr>
+                  <th>Video</th>
+                  <th><OuitubePlayer src={video.link as string} /></th>
+                </tr>
               </tbody>
-             
+
             </table>
           ) : (
             <p>Error: Failed to load video</p>

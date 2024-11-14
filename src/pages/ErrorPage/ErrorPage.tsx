@@ -5,8 +5,6 @@ import './ErrorPage.css';
 interface ErrorPageProps {
 
 }
-
-
 const ErrorPage: FC<ErrorPageProps> = () => {
 
   useEffect(() => {

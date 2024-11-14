@@ -35,7 +35,7 @@ const Upload: FC<UploadProps> = ({ hideModal, updateData }) => {
             poster: posterBlob,
             category: 'divers',
             link: videoBlob,
-            isAvailable: true, // Add this line
+            isAvailable: true,
             createdAt: new Date(),
           };
           await addVideo(video);
@@ -54,7 +54,6 @@ const Upload: FC<UploadProps> = ({ hideModal, updateData }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     const runLocalData = async () => {
-      // Local data handling logic
     };
     runLocalData();
   }, []);
